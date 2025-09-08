@@ -1,0 +1,2 @@
+# NexCord
+powerfull discord tool!
