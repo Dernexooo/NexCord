@@ -534,35 +534,6 @@ def nuker_tool():
     asyncio.set_event_loop(loop)
     loop.run_until_complete(bot.start(TOKEN))
 
-def bot_generator_tool():
-    clear()
-    print(PINK + BANNER + RESET)
-    print(WHITE + "[ Bot Token Generator - may lag ]" + RESET)
-    print(WHITE + "️ WARNING: These are public test tokens. Some might be in use by others, causing delays or errors.\n" + RESET)
-
-    # Beispiel-Tokens mit dazu passenden Invite-Links
-    bots = [
-        {"token": "MTQxNDU4MTkyNDg5NDA4NTMwMg.GD8HQk.EmmoevcBykngJyeKhoYW9CTKEaQtoBA0DiX2Jk", "invite": "https://bit.ly/46qoquV"},
-        {"token": "MTQxNDU4Mjc5NTE3ODYxMDc2OA.GzKYIq.tRbo86gvo6wP0zEc87G77FKhHs9Ydj9FSXqp68", "invite": "https://bit.ly/4m5Jeg4"},
-        {"token": "MTQxNDU4MzQyODUwNjA1ODc3Mg.G3BiLK.vDNtGXJQujERKivl103HBS1vMYM7-ee3mCEFPo", "invite": "https://bit.ly/4gexRRE"},
-        {"token": "MTQxNDU4MzgyODIxODkwODc4Mw.GJir1m.VmlGAnX-L8ypaViGjev2GMiHfcplfw5T-ZKkw0", "invite": "https://bit.ly/3I9HDb0"},
-        {"token": "MTQxNDU4Mzk1OTYxODE5MTM2MQ.GGgKtU.EFrt_5p6Mu20rjuFH05VDZPQtroYlOGNArFqvQ", "invite": "https://bit.ly/42dAHjS"},
-    ]
-
-    while True:
-        bot = random.choice(bots)
-        print(WHITE + f"\nBot Token: {bot['token']}" + RESET)
-        print(WHITE + f"Invite Link: {bot['invite']}" + RESET)
-
-        choice = input(WHITE + "\nType 1 for another random bot, B to return to main menu: " + RESET).strip().upper()
-        if choice == "1":
-            clear()
-            print(PINK + BANNER + RESET)
-        elif choice == "B":
-            break
-        else:
-            print(WHITE + "Invalid input! Try again." + RESET)
-
 def kick_user_tool():
     clear()
     print(PINK + BANNER + RESET)
@@ -1164,16 +1135,15 @@ def main_menu():
         "10": ("Channel Deleter (All)", channel_deleter_all_tool),
         "11": ("Server Deleter", server_deleter_tool),
         "12": ("Smart Nuker", nuker_tool),
-        "13": ("Bot-Token-Generator", bot_generator_tool),
-        "14": ("Kick (user)", kick_user_tool),
-        "15": ("Kick (all)", kick_all_tool),
-        "16": ("Ban (user)", ban_user_tool),
-        "17": ("Ban (all)", ban_all_tool),
-        "18": ("Timeout (user)", timeout_user_tool),
-        "19": ("Timeout (all)", timeout_all_tool),
-        "20": ("Message Logger", message_logger_tool),
-        "21": ("Server Logger (LOGS EVERYTHING!)", server_logger_tool),
-        "22": ("Server lock (RANSOMEWARE)", server_lock_tool),
+        "13": ("Kick (user)", kick_user_tool),
+        "14": ("Kick (all)", kick_all_tool),
+        "15": ("Ban (user)", ban_user_tool),
+        "16": ("Ban (all)", ban_all_tool),
+        "17": ("Timeout (user)", timeout_user_tool),
+        "18": ("Timeout (all)", timeout_all_tool),
+        "19": ("Message Logger", message_logger_tool),
+        "20": ("Server Logger (LOGS EVERYTHING!)", server_logger_tool),
+        "21": ("Server lock (RANSOMEWARE)", server_lock_tool),
     }
 
     while True:
@@ -1183,7 +1153,7 @@ def main_menu():
         # Spalten vorbereiten
         left_col = [f"{k}) {tools[k][0]}" for k in ["1","2","3","4","5","6","7","8","9","10"] if k in tools]
         right_col = [f"{k}) {tools[k][0]}" for k in ["11","12","13","14","15","16","17","18","19","20"] if k in tools]
-        last_col = [f"{k}) {tools[k][0]}" for k in ["21","22"] if k in tools]
+        last_col = [f"{k}) {tools[k][0]}" for k in ["21"] if k in tools]
         
 
         max_len = max(len(left_col), len(right_col), len(last_col))
